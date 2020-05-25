@@ -1,0 +1,23 @@
+from PIL import Image
+im = Image.open("prudhvi.jpg")
+#for rotating
+im.rotate(45).show()
+#to know the details of image
+im.size()
+im.format()
+#To convert the image in to grayscale
+prudhvi_gray = Image.open('prudhvi.jpg').convert('L') #L for luminious
+prudhvi_gray.show()
+
+
+import cv2
+import numpy as np
+from matplotlib import pyplot as plt
+im = cv2.imread('prudhvi.jpg',cv2.IMREAD_GRAYSCALE)
+
+plt.imshow(im, cmap = 'gray', interpolation = 'bicubic')
+
+# to hide tick values on X and Y axis
+plt.xticks([]), plt.yticks([])
+plt.plot([200,300,400],[100,200,300],'c', linewidth = 5)
+plt.show()
